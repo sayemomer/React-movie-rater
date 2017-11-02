@@ -4,6 +4,7 @@ import './App.css';
 import axios from "axios";
 import RatingForm from "./RatingForm";
 import RatingBox from './RatingBox';
+import Movies from './Movies';
 var moment = require('moment');
 
 class App extends Component {
@@ -11,7 +12,8 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-         post : []
+         post : [],
+         imagePost:[]
     }
 
     this.addComment=this.addComment.bind(this);
@@ -21,6 +23,10 @@ class App extends Component {
     
           axios.get("https://jsonplaceholder.typicode.com/posts/1/comments")
           .then( (res)=> this.setState( {post:res.data}  ))
+          .catch( (err) => console.log(err) )
+
+          axios.get("https://jsonplaceholder.typicode.com/photos?albumId=1")
+          .then( (res)=> this.setState( {imagePost:res.data}  ))
           .catch( (err) => console.log(err) )
   }
           
@@ -58,6 +64,14 @@ class App extends Component {
 
         <section className="section">
           <div className="container">
+
+          <div className="RatingMovies">
+            
+           {
+              this.state.imagePost.map( (post) => <Movies  id={post.id} moviePic={post.url}  />  )
+           }
+          
+          </div>
           
          <div className="ratingForm">
               <RatingForm
