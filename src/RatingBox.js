@@ -7,8 +7,10 @@ class RatingBox extends React.Component{
    super(props);
 
     this.state={
-       isAbusive : false
-    }
+       isAbusive : false,
+       totalLike : "",
+       totalDislike:""
+       }
 
   }
 
@@ -19,6 +21,28 @@ class RatingBox extends React.Component{
     })
 
   }
+
+  likeCounter( event ){
+
+    event.preventDefault();
+    let like= this.state.totalLike;
+    like++;
+    this.setState({
+      totalLike : like
+    })
+
+  }
+
+  dislikeCounter( event ){
+    
+        event.preventDefault();
+        let dislike= this.state.totalDislike;
+        dislike++;
+        this.setState({
+          totalDislike : dislike
+        })
+    
+      }
 
   
 
@@ -48,11 +72,11 @@ class RatingBox extends React.Component{
               </div>
             </div>
             <footer class="card-footer">
-              <a href=" " class="card-footer-item"><i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ></i>
+              <a href=" " class="card-footer-item" onClick={this.likeCounter.bind(this)}> <p> ({this.state.totalLike}) </p> <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ></i>
               </a>
               <a href=" " class="card-footer-item" onClick={this.toggleAbuse.bind(this)}><i class="fa fa-times fa-2x" aria-hidden="true"></i>
               </a>
-              <a href=" " class="card-footer-item"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
+              <a href=" " class="card-footer-item" onClick={this.dislikeCounter.bind(this)}><p>({this.state.totalDislike})</p><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i>
               </a>
             </footer>
           </div>
