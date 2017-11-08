@@ -56,10 +56,6 @@ class App extends Component {
   
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">React Movie Rater</h1>
-        </header>
         <body>
 
         <section className="section">
@@ -67,9 +63,7 @@ class App extends Component {
 
           <div className="RatingMovies">
             
-           {
-              this.state.imagePost.map( (post) => <Movies  id={post.id} moviePic={post.url}  />  )
-           }
+          <Movies/>
           
           </div>
           
