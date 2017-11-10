@@ -27,7 +27,7 @@ class Movies extends React.Component{
           <p class="title">Middle tile</p>
           <p class="subtitle">With an image</p>
           <figure class="image is-4by3">
-            <img src="https://bulma.io/images/placeholders/640x480.png" alt=""/>
+            <img src="./jason.jpeg" alt=""/>
           </figure>
         </article>
       </div>
