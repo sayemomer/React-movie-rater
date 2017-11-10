@@ -1,5 +1,4 @@
 import React from "react";
-import "./css/style1.css";
 
 class Movies extends React.Component{
  

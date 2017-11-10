@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 
-import RatingForm from "./RatingForm";
-import RatingBox from './RatingBox';
-import Movies from './Movies';
-import Intro from "./Intro";
+import RatingForm from "./Component/RatingForm";
+import RatingBox from './Component/RatingBox';
+import Movies from './Component/Movies';
+import Intro from "./Component/Intro";
 import { BrowserRouter as Router, Route, Redirect,Link} from 'react-router-dom';
 
 
